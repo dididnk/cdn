@@ -33,6 +33,7 @@ body, html {
 }
 
 * {
+    outline: none;
     box-sizing: border-box;
 }
 a{
@@ -71,7 +72,6 @@ a{
 }
 header{
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -127,19 +127,34 @@ header{
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* The image used */
-    background: url("../../data/img/bg-hd.jpg") center center no-repeat;
-    /* Add the blur effect */
-    // filter: blur(8px);
-    // -webkit-filter: blur(8px);
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 100%;
+    background: @Black;
     .menu-content{
-        background-color: red;
-        margin: 2em;
+        width: 80%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .inputSearch{
+            font-size: 1.2em;
+            padding: 0.5em;
+            width: 380px;
+            border: none;
+            border-radius: 10px 0 0 10px;
+        }
+        .buttonSearch{
+            font-size: 1.2em;
+            padding: 0.5em;
+            width: 50px;
+            border: none;
+            border-radius:  0 10px 10px 0;
+            background: @DarkYellow;
+            color: @Blue;
+        }
+        .buttonSearch:hover{
+            background: @Blue;
+            color: @DarkYellow;
+        }
     }
 }
 #map{
