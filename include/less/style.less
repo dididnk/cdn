@@ -27,14 +27,12 @@ author : ngbamedistingue@yahoo.com
 @FontPage   : 'IBM Plex Sans Thai Looped', sans-serif;
 @FontDesign : 'Comforter', cursive;
 
-body, html {
-    font-family: @FontPage;
-    height: 100%;
-}
-
 * {
     outline: none;
     box-sizing: border-box;
+}
+body, html {
+    font-family: @FontPage;
 }
 a{
     text-decoration: none;
@@ -57,12 +55,10 @@ a{
 
 /* ------------------------------------------------------  */
 /* Toute la page */
-.container{
+body{
     margin: auto;
-    padding: auto;
     border: none;
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -100,7 +96,7 @@ header{
         }
     }
     .header-link{
-        height: 90%;
+        // height: 90%;
         display: flex;
         flex-direction: row;
         .nav-link{
@@ -110,25 +106,28 @@ header{
             padding: 0 10px;
             display: flex;
             align-items: center;
-            height: 100%;
+            // height: 100%;
         }
         .nav-link:hover{
             border-bottom: 3px solid @Yellow;
             padding: 0 10px;
             display: flex;
             align-items: center;
-            height: 100%;
+            // height: 100%;
             color: @Yellow;
         }
     }
 }
 .header-menu{
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    background: @Black;
+    justify-content: center;
+    background: url("../../data/img/bg-hd.jpg") center center no-repeat;
+    height: 30vh;
+    color: #fff;
+    min-height: 400px;
+    background-size: cover;
+    background-attachment: fixed;
     .menu-content{
         width: 80%;
         height: 80%;
@@ -136,11 +135,14 @@ header{
         align-items: center;
         justify-content: center;
         .inputSearch{
-            font-size: 1.2em;
+            font-size: 1.1em;
             padding: 0.5em;
             width: 380px;
             border: none;
             border-radius: 10px 0 0 10px;
+            background: none;
+            border: 1px solid @Yellow;
+            color: @White;
         }
         .buttonSearch{
             font-size: 1.2em;
@@ -157,8 +159,40 @@ header{
         }
     }
 }
+section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: @DarkYellow;
+}
 #map{
-    height: 400px;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("../../data/img/tab_bg.jpg") center center no-repeat;
+    .map-tab{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        table{
+            border-collapse: collapse;
+            border-spacing: 0;
+            th, td{
+                padding: 10px 20px;
+                border: 2px solid @LightBlue;
+            }
+        }
+    }
+    #map-contain{
+        height: 950px;
+    }
 }
 
 footer{
