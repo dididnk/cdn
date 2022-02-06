@@ -172,7 +172,7 @@ section{
 }
 #map{
     width: 100%;
-    height: 60vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,11 +180,11 @@ section{
     background: url("../../data/img/tab_bg2.jpg") center center no-repeat;
     .map-tab{
         width: 100%;
-        height: 100vh;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        margin-bottom: 2em;
         table{
             border-collapse: collapse;
             border-spacing: 0;
@@ -193,6 +193,13 @@ section{
                 border: 2px solid @LightBlue;
             }
         }
+    }
+    #map-card{
+        display: flex;
+        padding: 1em;
+        width: 100%;
+        height: 500px;
+        background: @Black;
     }
 }
 .map-contain{
