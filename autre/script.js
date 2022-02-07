@@ -53,5 +53,3 @@ fetch("https://api.jcdecaux.com/vls/v3/contracts?&apiKey=7886a12c53604b2668a0858
             tbody.appendChild(row);
         }
     })
-
-//On met en place le filtre 

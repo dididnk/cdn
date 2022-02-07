@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
+* {
+	outline: none;
+	box-sizing: border-box;
+}
+body, html {
+	font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+}
+a {
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+ul {
+	list-style-type: none;
+}
+body {
+	margin: auto;
+	border: none;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	background-color: #646464;
+	color: #fff;
+	font-weight: medium;
+}
+header {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.header-nav {
+	width: 100%;
+	z-index: 999;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background: black;
+}
+.header-nav .header-logo {
+	height: 100%;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	text-align: center;
+	padding: 1em;
+}
+.header-nav .header-logo .nav-link {
+	color: #EDB000;
+	font-weight: bold;
+	font-family: 'Comforter', cursive;
+	cursor: progress;
+}
+.header-nav .header-logo .nav-link:hover {
+	color: #FFD43B;
+}
+.header-nav .header-link {
+	display: flex;
+	flex-direction: row;
+	padding-right: 2em;
+}
+.header-nav .header-link .nav-link {
+	color: #EDB000;
+	font-weight: bold;
+	border-bottom: 3px solid black;
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+}
+.header-nav .header-link .nav-link:hover {
+	border-bottom: 3px solid #FFD43B;
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+	color: #FFD43B;
+}
+.header-menu {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: url("../../data/img/bg-hd.jpg") center center no-repeat;
+	height: 30vh;
+	color: #fff;
+	min-height: 400px;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.header-menu .menu-content {
+	width: 80%;
+	height: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.header-menu .menu-content .inputSearch {
+	font-size: 1.1em;
+	padding: 0.5em;
+	width: 380px;
+	border: none;
+	border-radius: 10px 0 0 10px;
+	background: none;
+	border: 1px solid #FFD43B;
+	color: #fff;
+}
+.header-menu .menu-content .buttonSearch {
+	font-size: 1.2em;
+	padding: 0.5em;
+	width: 50px;
+	border: none;
+	border-radius: 0 10px 10px 0;
+	background: #EDB000;
+	color: #1C78C0;
+}
+.header-menu .menu-content .buttonSearch:hover {
+	background: #1C78C0;
+	color: #EDB000;
+}
+#map {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: url("../../data/img/tab_bg2.jpg") center center no-repeat;
+}
+#map .map-tab {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 2em;
+}
+#map .map-tab table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+#map .map-tab table th, #map .map-tab table td {
+	padding: 10px 20px;
+	border: 2px solid #8ED5FA;
+}
+#map #map-card {
+	display: flex;
+	padding: 1em;
+	width: 100%;
+	height: 500px;
+	background: black;
+}
+.map-contain {
+	height: 950px;
+}
+#about{
+	background: black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.about-main{
+	margin: auto;
+	padding: 1em;
+}
+.about-main h1{
+	color: #EDB000;
+}
+.about-main h2{
+	color: #1C78C0;
+}
+.about-main h3{
+	color: #646464;
+}
+.about-main h3 span{
+	color: #D30044;
+}
+.about-main li i{
+	color: #1C78C0;
+	margin-right: .5em;
+}
+.about-main a{
+	font-size: 1em;
+	font-weight: bold;
+	color: #170C6A;
+}
+.about-main a:hover{
+	color: #8ED5FA;
+}
+p span{
+	padding: .5em;
+	background: #292626;
+	border-left: 2px solid #8ED5FA;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+}
+footer a {
+	padding: 1em;
+	color: #EDB000;
+	font-size: larger;
+}
+footer a:hover {
+	color: #FFD43B;
+}
+
+
+/* Page liste des villes ayant un contrat */
+
+.main{
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+	color: #EDB000;
+}
+.main #body{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#body table{
+	width: 400px;
+	border: 1px solid #8ED5FA;
+}
+table td{
+	padding: 1em;
+	border: 1px solid #8ED5FA;
+}

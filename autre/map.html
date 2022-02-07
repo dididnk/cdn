@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -8,7 +8,9 @@
         crossorigin="" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-    <style type="text/css">
+    <link rel="stylesheet" type="text/css" href="./../include/less/style.css" />
+    <link rel="stylesheet" href="../include/css/style.css">
+    <style>
         #map {
             /* Hauteur de la carte pour qu'elle s'affiche */
             height: 950px;
@@ -18,6 +20,15 @@
 </head>
 
 <body>
+    <header>
+        <nav class="header-nav">
+            <div class="header-logo"><a class="nav-link" href="#">CDN <br> Clastre-Dolet-Ngbame</a></div>
+            <div class="header-link">
+                <a class="nav-link" href="./../index.html">Accueil</a>
+            </div>
+        </nav>
+    </header>
+    
     <div id="map">
         <!-- Ici s'affichera la carte -->
     </div>
@@ -26,7 +37,7 @@
         integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
         crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-    <script type="text/javascript">
+    <script>
 
 
         var macarte = null;
@@ -44,28 +55,31 @@
 
 
             let i = 0;
-            fetch("https://api.jcdecaux.com/vls/v1/stations?&apiKey=7886a12c53604b2668a08582a04795afcc9375b0")
+            fetch("https://api.jcdecaux.com/vls/v3/stations?&apiKey=7886a12c53604b2668a08582a04795afcc9375b0")
                 .then(response => response.json())
                 .then(data => {
                     data.forEach(element => {
                         //création du marqueur avec la latitude et la longitude
-                        var lat = data[i].position.lat;
-                        var lon = data[i].position.lng;
+                        var lat = data[i].position.latitude;
+                        var lon = data[i].position.longitude;
 
                         var marker = L.marker([lat, lon]);
 
                         //création de la popup avec les informations de la station
-                        var standDispo = data[i].available_bike_stands;
-                        var veloDispo = data[i].available_bikes;
+                        var standDispo = data[i].totalStands.availabilities.stands;
+                        var veloDispoMeca = data[i].totalStands.availabilities.mechanicalBikes;
+                        var veloDispoElecBattInt = data[i].totalStands.availabilities.electricalInternalBatteryBikes;
+                        var veloDispoElecBattExt = data[i].totalStands.availabilities.electricalRemovableBatteryBikes;
                         var adresse = data[i].address;
                         var statutEn = data[i].status;
+
                         var statutFr;
                         if (statutEn == "OPEN") {
                             statutFr = "Station ouverte";
                         } else {
                             statutFr = "Station fermée";
                         }
-                        marker.bindPopup("Adresse : " + adresse + "<hr/> Emplacement(s) disponible(s) : " + standDispo + "<hr/> Vélo(s) disponible(s) : " + veloDispo + "<hr/>Statut : " + statutFr + "<hr/>");
+                        marker.bindPopup("Adresse : " + adresse + "<hr/> Emplacement(s) disponible(s) : " + standDispo + "<hr/> Vélo(s) mécanique(s) disponible(s) : " + veloDispoMeca + "<hr/> Vélo(s) électrique(s) (batterie intégrée) disponible(s) : " + veloDispoElecBattInt + "<hr/> Vélo(s) électrique(s) (batterie détachable) disponible(s) : " + veloDispoElecBattExt + "<hr/>Statut : " + statutFr + "<hr/>");
                         markers.addLayer(marker);
 
                         i++;
@@ -79,6 +93,9 @@
             initMap();
         };
     </script>
+    <footer>
+        <a href="#">Tous droits réservés | CDN: Clastre-Dolet-Ngbame</a>
+    </footer>
 </body>
 
 </html>
