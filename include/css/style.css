@@ -221,17 +221,19 @@ footer a:hover {
 	color: #EDB000;
 }
 .main #body{
-	width: 100%;
+	width: 50em;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 }
 
 #body table{
-	width: 400px;
+	border-collapse: collapse;
 	border: 1px solid #8ED5FA;
 }
+#body > table:nth-child(1) > thead:nth-child(1) {
+	background: #646464;
+}
 table td{
-	padding: 1em;
 	border: 1px solid #8ED5FA;
 }
